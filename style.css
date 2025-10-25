@@ -1,0 +1,1131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+body, html, * {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+/* ===== RESET & GLOBAL ===== */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(to right, #f8fbff, #e1ebff); /* Nền sáng xanh lưu ly */
+}
+
+#home,
+#about,
+#skills,
+#projects,
+#blogs,
+#content,
+#contact {
+  scroll-margin-top: 28px;
+}
+
+
+/* ===== NAVBAR ===== */
+nav {
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: linear-gradient(to right, #f8fbff, #e1ebff);
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  color: black;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.logo span {
+  color: #3A5BA0; /* Xanh lưu ly */
+  text-shadow: 0 0 10px #7EA9FF;
+}
+
+.hamburg, .cancel {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: black;
+  font-size: 2rem;
+  display: none;
+}
+
+.nav-container .links {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.nav-container .links a {
+  position: relative;
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s linear;
+}
+
+.nav-container .links a::before {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #3A5BA0;
+  transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before {
+  width: 100%;
+}
+
+.nav-container .contact-btn {
+  background-color: transparent;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border: 2px solid #3A5BA0;
+  transition: 0.2s linear;
+}
+
+.nav-container .contact-btn a {
+  color: black;
+  transition: 0.3s linear;
+}
+
+.nav-container .contact-btn:hover, 
+.nav-container .contact-btn:hover a {
+  background-color: #3A5BA0;
+  color: white;
+}
+
+.nav-container .links a:hover {
+  color: #3A5BA0;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  transform: translateY(-500px);
+  width: 100%;
+  height: auto;
+  backdrop-filter: brightness(40%) blur(3px);
+  background: linear-gradient(135deg, #3A5BA0, #7EA9FF);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  transition: 0.2s linear;
+}
+
+.dropdown .links a {
+  color: white;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  padding: 15px 0;
+  align-items: center;
+  transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+
+
+/* ===== SECTION GLOBAL ===== */
+section {
+  width: 100%;
+  min-height: 90vh; 
+  padding-top: 12vh; 
+  overflow-x: hidden;
+}
+
+/* ===== MAIN (HOME) ===== */
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* canh giữa tổng thể */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* giảm từ space-evenly thành khoảng cố định nhỏ hơn */
+  padding: 100px 8%;
+}
+
+.main-container .image {
+  width: 45%;
+  flex: 0 0 35%;
+  min-width: 300px;
+}
+
+.main-container .image img {
+  width: 340px; /* tăng kích thước ảnh (320–360px tùy bạn) */
+  height: 340px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #ffffff; /* viền trắng */
+  box-shadow: 0 0 25px rgba(58, 91, 160, 0.35); /* ánh xanh nhẹ, sang */
+}
+
+.main-container .content {
+  color: black;
+  width: 40%;
+  min-height: 100px;
+}
+
+.content h1 {
+  font-size: clamp(1rem, 2rem + 5vw, 3rem);
+}
+
+.content h1 span {
+  color: #3A5BA0; /* Xanh lưu ly iPhone 16 */
+  text-shadow: 0 0 10px #7EA9FF; /* ánh xanh bạc */
+}
+
+/* ===== TYPEWRITER ===== */
+.content .typewriter {
+  font-weight: 600;
+  font-size: clamp(1rem, 1rem + 5vw, 2rem);
+}
+
+.content .typewriter span {
+  color: #3A5BA0; /* Xanh lưu ly iPhone 16 */
+  font-size: 2.5rem;
+  text-shadow: 0 0 8px #7EA9FF; /* ánh sáng xanh bạc */
+  position: relative;
+  transition: 0.3s linear;
+}
+
+.typewriter span::before {
+  content: "Developer";
+  animation: words 15s infinite;
+}
+
+.typewriter span::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid #3A5BA0; /* viền xanh lưu ly */
+  animation: cursor 0.6s linear infinite;
+}
+
+@keyframes cursor {
+  50% { border-color: transparent; }
+  100% { border-color: #7EA9FF; } /* nhấp nháy xanh bạc */
+}
+
+@keyframes words {
+  0%, 33% { content: "Developer"; }
+  34%, 66% { content: "Designer"; }
+  67%, 100% { content: "Youtuber"; }
+}
+
+/* ===== BUTTON ===== */
+.content button {
+  width: 40%;
+  height: 6vh;
+  margin: 30px;
+  background-color: #3A5BA0; /* Xanh lưu ly iPhone 16 */
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 100%;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(58,91,160,0.4); /* ánh sáng dịu */
+  transition: 0.3s ease;
+}
+
+.content button:hover {
+  scale: 1.1;
+  color: #3A5BA0;
+  border: 2px solid #3A5BA0;
+  background-color: transparent;
+  box-shadow: 0 0 40px #7EA9FF; /* ánh bạc xanh */
+}
+
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border: 0.2rem solid #3A5BA0; /* Xanh lưu ly iPhone 16 */
+  border-radius: 50%;
+  color: #3A5BA0;
+  margin: 5px 10px;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
+}
+
+.social-icons i:hover {
+  scale: 1.3;
+  color: white;
+  background-color: #3A5BA0;
+  box-shadow: 0 0 20px #7EA9FF; /* ánh sáng bạc xanh */
+  filter: brightness(1.2);
+}
+
+/* ===== ABOUT SECTION (nhỏ gọn hơn, đồng bộ Soft Skills) ===== */
+#about {
+  width: 100%;
+  min-height: 90vh;
+  background: linear-gradient(to right, #f8fbff, #e1ebff); /* nền xanh lưu ly sáng */
+  padding: 60px 8% 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* canh trái nhẹ, tự nhiên */
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start; /* để có thể hạ ảnh xuống */
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px; /* thêm khoảng cách trên nhẹ để không dính header */
+}
+
+.about-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(58, 91, 160, 0.4); /* ánh xanh lưu ly */
+  transform: translateY(15px); /* hạ ảnh xuống nhẹ cho cân với chữ */
+}
+
+.about-content {
+  max-width: 450px;
+}
+
+.about-content h2 {
+  font-size: 1.6rem;
+  color: #3A5BA0; /* xanh lưu ly iPhone 16 */
+  text-shadow: 0 0 8px rgba(122,169,255,0.5); /* ánh bạc xanh */
+}
+
+.about-content hr {
+  width: 70px;
+  height: 2.5px;
+  background-color: #3A5BA0;
+  border: none;
+  margin: 8px 0 15px 0;
+}
+
+.about-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #about {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-content {
+    max-width: 90%;
+  }
+}
+
+
+/* ===== SOFT SKILLS (2 hàng 3 cột nhỏ gọn hơn) ===== */
+.soft-skills {
+  margin: 50px auto;
+  width: 80%;
+  background: linear-gradient(to right, #f8fbff, #e1ebff); /* nền xanh lưu ly sáng */
+  border-radius: 18px;
+  padding: 30px 4%;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(58, 91, 160, 0.1);
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #3A5BA0; /* xanh lưu ly iPhone 16 */
+  text-shadow: 0 0 8px rgba(122,169,255,0.4);
+}
+
+/* Grid 2 hàng 3 cột */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 25px;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.skill-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  width: 100%;
+  max-width: 240px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(58,91,160,0.15); /* viền xanh nhạt */
+}
+
+.skill-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(58,91,160,0.25);
+  background: linear-gradient(145deg, #f0f5ff, #ffffff);
+}
+
+.skill-box i {
+  font-size: 1.6rem;
+  color: #3A5BA0; /* biểu tượng xanh lưu ly */
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 5px rgba(122,169,255,0.4));
+}
+
+.skill-box h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3A5BA0;
+  margin-bottom: 4px;
+}
+
+.skill-box p {
+  color: #444;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  padding: 0 6px;
+}
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== RESUME (tông xanh lưu ly iPhone 16) ===== */
+#resume {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f8fbff, #e1ebff);
+  padding: 100px 10% 60px;
+}
+
+#resume h2 {
+  font-size: 2rem;
+  color: rgb(0, 122, 255);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#resume p {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.resume-left h3 {
+  font-size: 1.5rem;
+  color: rgb(0, 122, 255);
+  margin-bottom: 10px;
+  border-left: 4px solid rgb(0, 122, 255);
+  padding-left: 10px;
+}
+
+.resume-left h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.resume-left ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-left ul li {
+  margin: 5px 0;
+}
+
+/* Nút chứng chỉ */
+.certificate-link {
+  display: inline-block;
+  width: 100%;
+  border: 2px solid rgb(0, 122, 255);
+  padding: 10px 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgb(0, 122, 255);
+  font-weight: 600;
+  background: linear-gradient(135deg, #f0f6ff, #d6e9ff);
+  box-shadow: 0 2px 6px rgba(0, 122, 255, 0.25);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certificate-link:hover {
+  background: rgb(0, 122, 255);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 122, 255, 0.4);
+  transform: scale(1.03);
+}
+
+.qr-code {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+}
+
+/* ===== RESPONSIVE (tông xanh lưu ly iPhone 16) ===== */
+@media (max-width:884px) {
+  nav .logo {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    font-size: 1.5rem;
+    color: rgb(0, 122, 255);
+    text-shadow: 0 0 8px rgba(0,122,255,0.3);
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-container .content {
+    width: 85%;
+    text-align: center;
+  }
+
+  .main-container .image {
+    width: 80%;
+    filter: drop-shadow(0 0 15px rgba(0,122,255,0.2));
+  }
+
+  .social-links i {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.4rem;
+    border: 0.18rem solid rgb(0,122,255);
+    color: rgb(0,122,255);
+  }
+
+  .social-links i:hover {
+    background-color: rgb(0,122,255);
+    color: white;
+    filter: drop-shadow(0 0 10px rgba(0,122,255,0.6));
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 230px;
+    height: 230px;
+    box-shadow: 0 6px 16px rgba(0,122,255,0.2);
+  }
+
+  .soft-skills {
+    padding: 40px 5%;
+    background: linear-gradient(to right, #f0f6ff, #d6e9ff);
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .certificate-link {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    border-color: rgb(0,122,255);
+    box-shadow: 0 2px 10px rgba(0,122,255,0.25);
+  }
+}
+
+@media (max-width:600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  #resume h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== MY SKILLS (Xanh lưu ly iPhone 16) ===== */
+#skills {
+  width: 100%;
+  min-height: 70vh;
+  background: linear-gradient(to right, #f8fbff, #e1ebff); /* đổi giống About */
+  padding: 60px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.skills-container {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(0, 122, 255);
+  text-shadow: 0 0 8px rgba(0,122,255,0.25);
+  margin-bottom: 10px;
+}
+
+.skills-subtitle {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* Danh sách kỹ năng */
+.skills-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Mỗi skill */
+.skill p {
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+/* Thanh progress nền */
+.progress {
+  background-color: #e3efff;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  box-shadow: inset 0 1px 3px rgba(0,122,255,0.15);
+}
+
+/* Thanh tiến trình */
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, rgb(0,122,255), rgb(0,180,255));
+  border-radius: 20px 0 0 20px;
+  color: #fff;
+  font-weight: 600;
+  text-align: right;
+  padding-right: 10px;
+  transition: width 1.2s ease-in-out, filter 0.3s ease;
+}
+
+/* Hiệu ứng khi hover */
+.skill:hover .progress-bar {
+  filter: brightness(1.2) drop-shadow(0 0 8px rgba(0,122,255,0.4));
+}
+
+/* Responsive nhẹ */
+@media (max-width: 768px) {
+  #skills {
+    padding: 40px 6%;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+/* ===== PROJECTS (Xanh lưu ly iPhone 16) ===== */
+#projects {
+  width: 100%;
+  min-height: 90vh;
+  background: linear-gradient(to right, #f8fbff, #e1ebff); /* nền sáng xanh lưu ly */
+  padding: 70px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+#projects .section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(0, 122, 255);
+  text-shadow: 0 0 6px rgba(0,122,255,0.25);
+  margin-bottom: 10px;
+}
+
+.projects-subtitle {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 35px;
+}
+
+/* --- PROJECT GRID --- */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* --- PROJECT CARD --- */
+.project-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,122,255,0.15);
+  transition: all 0.3s ease;
+  max-width: 320px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,122,255,0.3);
+}
+
+/* --- PROJECT IMAGE --- */
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* --- PROJECT CONTENT --- */
+.project-content {
+  padding: 18px;
+  text-align: left;
+}
+
+.project-content h3 {
+  color: rgb(0, 122, 255);
+  font-size: 1rem;
+  margin-bottom: 6px;
+  text-shadow: 0 0 4px rgba(0,122,255,0.15);
+}
+
+.project-content p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* --- LINK / BUTTON --- */
+.project-link {
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgb(0, 122, 255);
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.project-link:hover {
+  background: rgb(0,180,255);
+  box-shadow: 0 0 12px rgba(0,180,255,0.4);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .project-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+}
+
+
+/* ===== CONTACT SECTION ===== */
+#contact {
+  padding: 80px 10%;
+  background: #eef6ff; /* nền xanh nhạt dịu mắt */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  background: white;
+  border: 3px solid #0F52BA; /* xanh lưu ly */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(15, 82, 186, 0.2);
+  padding: 50px 60px;
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.contact-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(15, 82, 186, 0.3);
+}
+
+.contact-container h2 {
+  font-size: 2em;
+  color: #0F52BA;
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  color: #444;
+  margin-bottom: 25px;
+  font-size: 1.1em;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #b5cfff;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  background-color: #f8fbff;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0F52BA;
+  box-shadow: 0 0 8px rgba(15, 82, 186, 0.3);
+  background-color: white;
+}
+
+.contact-form .btn {
+  background: #0F52BA;
+  color: white;
+  padding: 12px 35px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background: #0d47a1;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(15, 82, 186, 0.3);
+}
+
+/* ===== BLOGS (AI Section – Xanh Lưu Ly iPhone 16) ===== */
+#blogs {
+  width: 100%;
+  min-height: 90vh;
+  background: linear-gradient(to right, #f8fbff, #e1ebff); /* đổi giống About */
+  padding: 70px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.blogs-container {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgb(0, 122, 255);
+  text-shadow: 0 0 6px rgba(0,122,255,0.25);
+  margin-bottom: 10px;
+}
+
+.blogs-subtitle {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 35px;
+}
+
+/* --- BLOG LIST --- */
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* --- BLOG CARD --- */
+.blog-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  max-width: 310px;
+  box-shadow: 0 4px 12px rgba(0,122,255,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,122,255,0.3);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* --- BLOG CONTENT --- */
+.blog-content {
+  padding: 16px;
+  text-align: left;
+}
+
+.blog-content h3 {
+  font-size: 1rem;
+  color: rgb(0, 122, 255);
+  text-shadow: 0 0 4px rgba(0,122,255,0.15);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.blog-content p {
+  font-size: 0.88rem;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* --- LINK --- */
+.read-more {
+  color: rgb(0, 122, 255);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  color: rgb(0, 180, 255);
+  text-shadow: 0 0 6px rgba(0,180,255,0.4);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  #blogs {
+    padding: 60px 6%;
+  }
+
+  .blog-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-card img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-list {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card {
+    max-width: 100%;
+  }
+
+  .blog-content h3 {
+    font-size: 1rem;
+  }
+}
+
+/* --- Blog Row (giữ nguyên, đồng bộ màu) --- */
+.blog-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* ===== BLOGS SECTION ===== */
+#blogs {
+  padding: 100px 50px;
+  text-align: center;
+  background-color: #f9f9ff;
+}
+
+.blogs-container .section-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.blogs-subtitle {
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #222;
+}
+
+.blog-card p {
+  color: #666;
+  font-size: 0.9rem;
+  padding: 0 1rem;
+  min-height: 60px;
+}
+
+.read-btn {
+  display: inline-block;
+  margin: 1rem 0 1.5rem;
+  padding: 8px 20px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ff7eb3, #6e8efb);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== BLOGS CHỈ ĐỔI MÀU ===== */
+#blogs {
+  background: linear-gradient(to right, #f8fbff, #e1ebff); /* nền xanh lưu ly như các section khác */
+}
+
+.blogs-container .section-title {
+  color: #3A5BA0; /* chữ tiêu đề xanh lưu ly */
+}
+
+.blogs-subtitle {
+  color: #333; /* chữ phụ đồng bộ */
+}
+
+.blog-card {
+  background: #fff; /* giữ trắng, đồng bộ shadow */
+}
+
+.blog-card h3 {
+  color: #3A5BA0; /* tiêu đề blog xanh */
+}
+
+.blog-card p {
+  color: #333; /* nội dung blog màu đen xám */
+}
+
+.read-btn {
+  background: linear-gradient(90deg, #3A5BA0, #7EA9FF); /* nút đọc thêm xanh đồng bộ */
+  color: white;
+}
+
+.read-btn:hover {
+  background: linear-gradient(90deg, #7EA9FF, #3A5BA0); /* hover đảo màu */
+}
+

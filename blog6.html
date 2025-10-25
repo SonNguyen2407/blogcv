@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computer Vision – Khi máy “nhìn thấy”</title>
+
+  <!-- CSS chung và CSS chi tiết -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="blog-detail.css" />
+</head>
+<body>
+
+  <main class="blog-detail">
+
+    <!-- Nút quay lại -->
+    <div class="nav-links">
+      <a href="index.html#blogs" class="back-link">← Quay lại Trang Blogs</a>
+      <a href="index.html" class="home-link">Trang chủ</a>
+    </div>
+
+    <!-- Header bài viết -->
+    <header class="blog-detail__header">
+      <h1>Computer Vision – Khi máy “nhìn thấy”</h1>
+      <p class="blog-detail__meta">
+        Hành trình giúp máy tính hiểu thế giới qua hình ảnh và các ứng dụng thực tế.
+      </p>
+    </header>
+
+    <!-- Nội dung bài viết -->
+    <section class="blog-detail__content">
+
+      <p>
+        Computer Vision – hay “thị giác máy tính” – là một trong những trụ cột quan trọng nhất của trí tuệ nhân tạo hiện nay.
+        Nếu Machine Learning giúp máy học từ dữ liệu, thì Computer Vision cho phép máy “hiểu” thế giới bằng mắt — qua hình ảnh, video,
+        camera giám sát, drone hay robot. Mục tiêu cốt lõi là <strong>mô phỏng khả năng nhận thức thị giác của con người</strong>, giúp máy nhận biết, phân tích
+        và đưa ra quyết định dựa trên thông tin trực quan.
+      </p>
+
+      <p>
+        Từ việc nhận diện khuôn mặt trên điện thoại, phát hiện bệnh trong ảnh X-quang, cho đến xe tự lái — tất cả đều dựa trên nền tảng Computer Vision.
+        Công nghệ này không chỉ giúp máy “nhìn thấy”, mà còn <strong>“hiểu được”</strong> những gì nó đang nhìn.
+      </p>
+
+      <figure>
+        <img src="images/thi giac.jpg" alt="Thị giác máy tính trong đời sống" class="blog-detail__image" />
+        <figcaption>Computer Vision giúp máy phân tích hình ảnh để ra quyết định thông minh.</figcaption>
+      </figure>
+
+      <h2>1. Nguyên lý hoạt động của Computer Vision</h2>
+      <p>
+        Hệ thống Computer Vision trải qua nhiều giai đoạn:
+      </p>
+      <ul>
+        <li><strong>Thu nhận hình ảnh:</strong> Camera hoặc video stream cung cấp dữ liệu đầu vào.</li>
+        <li><strong>Xử lý hình ảnh:</strong> Làm sạch, cân bằng sáng, khử nhiễu và chuẩn hóa ảnh.</li>
+        <li><strong>Trích xuất đặc trưng:</strong> Nhận diện cạnh, màu sắc, kết cấu hoặc mẫu hình trong ảnh.</li>
+        <li><strong>Phân loại và nhận dạng:</strong> CNN xác định vật thể, hành động hoặc ngữ cảnh cụ thể.</li>
+      </ul>
+
+      <p>
+        Cốt lõi của Computer Vision hiện đại là <strong>mạng neuron tích chập (CNN)</strong>.
+        CNN quét hình ảnh bằng các “bộ lọc” để phát hiện đặc trưng. Tầng càng sâu, mạng càng nhận diện được chi tiết trừu tượng hơn.
+      </p>
+
+      <figure>
+        <img src="images/cau trúc cnn.png" alt="Cấu trúc CNN" class="blog-detail__image" />
+        <figcaption>Cấu trúc mạng neuron tích chập (CNN) trong Computer Vision.</figcaption>
+      </figure>
+
+      <h2>2. Các mô hình nổi bật</h2>
+      <ul>
+        <li><strong>LeNet (1998):</strong> Nhận dạng chữ số viết tay.</li>
+        <li><strong>AlexNet (2012):</strong> Cách mạng AI, cải thiện độ chính xác trên ImageNet.</li>
+        <li><strong>ResNet (2015):</strong> Mạng sâu với “skip connection”.</li>
+        <li><strong>YOLO:</strong> Phát hiện vật thể thời gian thực.</li>
+        <li><strong>Vision Transformer (ViT):</strong> Ứng dụng cơ chế attention của NLP vào thị giác.</li>
+      </ul>
+
+      <h2>3. Ứng dụng thực tế</h2>
+      <ul>
+        <li><strong>Y tế:</strong> Phát hiện ung thư, tổn thương võng mạc, chẩn đoán da liễu bằng AI.</li>
+        <li><strong>Xe tự lái:</strong> Camera và lidar giúp xe hiểu môi trường, phát hiện vật thể.</li>
+        <li><strong>An ninh:</strong> Nhận diện khuôn mặt, theo dõi hành vi.</li>
+        <li><strong>Bán lẻ:</strong> Cửa hàng không thu ngân dùng camera AI.</li>
+        <li><strong>Nông nghiệp:</strong> Drone AI phân tích sức khỏe cây trồng.</li>
+      </ul>
+
+      <figure>
+        <img src="images/AI-trong-ngan-hang.jpg" alt="AI trong cửa hàng không thu ngân" class="blog-detail__image" />
+        <figcaption>AI trong bán lẻ giúp tự động thanh toán và quản lý sản phẩm.</figcaption>
+      </figure>
+
+      <h2>4. Thách thức và hạn chế</h2>
+      <ul>
+        <li><strong>Dữ liệu lớn:</strong> Cần hàng triệu ảnh gán nhãn.</li>
+        <li><strong>Bias:</strong> Dữ liệu thiên lệch dẫn đến sai lệch kết quả.</li>
+        <li><strong>Chi phí tính toán:</strong> GPU mạnh, tốn năng lượng.</li>
+        <li><strong>Đạo đức:</strong> Camera giám sát có thể lạm dụng.</li>
+      </ul>
+
+      <h2>5. Xu hướng và tương lai</h2>
+      <p>
+        Computer Vision kết hợp với <strong>AI đa phương thức (Multimodal AI)</strong> để “nhìn”, “nghe”, “đọc” và hiểu ngữ cảnh.
+        Ví dụ, GPT-4V (Vision) đọc và phân tích hình ảnh như con người.
+      </p>
+
+      <figure>
+        <img src="images/thi-giac-may-tinh-1.png" alt="Tương lai của Computer Vision" class="blog-detail__image" />
+        <figcaption>Tương lai Computer Vision kết hợp AI đa phương thức.</figcaption>
+      </figure>
+
+      <p>
+        Công nghệ đang định hình lại cách con người và máy tương tác, đồng thời nhấn mạnh **đạo đức, dữ liệu minh bạch và bảo mật hình ảnh cá nhân**.
+      </p>
+
+      <blockquote class="blog-quote">
+        💡 <em>Computer Vision giúp máy “nhìn” như con người, nhưng trách nhiệm và đạo đức vẫn phải đặt lên hàng đầu.</em>
+      </blockquote>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+      <p class="signature">— Vỹ nghĩ vậy đó 🌿</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
