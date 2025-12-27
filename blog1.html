@@ -1,92 +1,156 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ứng dụng AI trong đời sống</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kết nối cơ sở dữ liệu MySQL bằng C++</title>
 
   <!-- CSS chung và CSS chi tiết -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="blog-detail.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog-detail.css">
 </head>
 <body>
 
   <main class="blog-detail">
     <!-- Nút quay lại -->
     <div class="nav-links">
-  <a href="index.html#blogs" class="back-link">← Quay lại Trang Blogs</a>
-  <a href="index.html" class="home-link">Trang chủ</a>
-</div>
-
+      <a href="index.html#blogs" class="back-link">← Quay lại Trang Blogs</a>
+      <a href="index.html" class="home-link">Trang chủ</a>
+    </div>
 
     <!-- Header bài viết -->
     <header class="blog-detail__header">
-      <h1>Ứng dụng AI trong đời sống</h1>
+      <h1>Kết nối cơ sở dữ liệu MySQL bằng C++</h1>
       <p class="blog-detail__meta">
-        Khám phá cách trí tuệ nhân tạo đang thay đổi cuộc sống và công việc của chúng ta.
+        Hướng dẫn chi tiết cách kết nối C++ với cơ sở dữ liệu MySQL bằng MySQL Connector/C++ — nền tảng cho các ứng dụng hệ thống và backend hiệu năng cao.
       </p>
     </header>
 
     <!-- Nội dung bài viết -->
     <section class="blog-detail__content">
+
       <p>
-        Trí tuệ nhân tạo (AI) không còn là khái niệm xa lạ mà đã trở thành một phần quen thuộc trong cuộc sống hiện nay.
-        Từ chiếc điện thoại, mạng xã hội cho đến công việc và y tế — AI đang len lỏi vào mọi lĩnh vực, 
-        giúp con người sống tiện lợi và hiệu quả hơn.
+        Trong lập trình C++, việc làm việc với cơ sở dữ liệu giúp chương trình trở nên linh hoạt và có khả năng lưu trữ dữ liệu lâu dài.
+        MySQL Connector/C++ cho phép C++ kết nối, truy vấn và thao tác dữ liệu MySQL một cách hiệu quả.
       </p>
 
       <figure>
-        <img src="images/AI-trong-doi-song.jpg" alt="AI trong đời sống" class="blog-detail__image" />
-        <figcaption>AI đang dần trở thành “người bạn đồng hành” của con người trong kỷ nguyên số.</figcaption>
+        <img src="images/1.jpg" alt="Kết nối MySQL bằng C++" class="blog-detail__image">
+        <figcaption>Kết nối giữa chương trình C++ và MySQL để xử lý dữ liệu động.</figcaption>
       </figure>
 
-      <h2>1. AI trong đời sống hằng ngày</h2>
+      <h2>1. MySQL Connector/C++ là gì?</h2>
       <p>
-        Mỗi khi bạn tìm kiếm trên Google, xem phim trên Netflix hay nghe nhạc trên Spotify — 
-        các hệ thống AI đều hoạt động âm thầm để cá nhân hóa trải nghiệm của bạn.
-        Chúng học từ hành vi và sở thích để mang lại những gợi ý phù hợp nhất.
+        MySQL Connector/C++ là thư viện do MySQL cung cấp, cho phép các chương trình C++ giao tiếp trực tiếp với cơ sở dữ liệu MySQL.
+        Nó hỗ trợ thực thi câu lệnh SQL và xử lý kết quả tương tự như các ngôn ngữ backend khác.
       </p>
+
       <blockquote class="blog-quote">
-        💡 <em>Có lúc tôi chợt nhận ra, AI hiểu tôi hơn cả… chính tôi — ít nhất là khi chọn nhạc!</em>
+        💡 <em>Có thể hiểu đơn giản: MySQL Connector/C++ là “cầu nối” giúp C++ nói chuyện được với MySQL.</em>
       </blockquote>
 
-      <h2>2. AI trong công việc và học tập</h2>
-      <p>
-        AI giúp tự động hóa các tác vụ lặp lại như xử lý dữ liệu, trả lời email hay tạo báo cáo.
-        Trong học tập, các công cụ như ChatGPT đang hỗ trợ sinh viên tìm tài liệu, soạn nội dung và học hiệu quả hơn.
-      </p>
+      <h2>2. Chuẩn bị môi trường</h2>
+      <p>Trước khi bắt đầu, bạn cần:</p>
+      <ul>
+        <li>Cài đặt <strong>MySQL Server</strong> và tạo database, ví dụ: <code>student_db</code>.</li>
+        <li>Tải <strong>MySQL Connector/C++</strong> từ trang chủ MySQL.</li>
+        <li>Cấu hình thư viện và header vào project C++ (Visual Studio / GCC).</li>
+      </ul>
+
+      <h2>3. Ví dụ kết nối MySQL bằng C++</h2>
+      <p>Đoạn code sau minh họa cách kết nối MySQL trong C++:</p>
+
+      <pre><code>
+#include &lt;iostream&gt;
+#include &lt;mysql/jdbc.h&gt;
+
+using namespace std;
+using namespace sql;
+
+int main() {
+    try {
+        Driver* driver;
+        Connection* conn;
+
+        driver = get_driver_instance();
+        conn = driver-&gt;connect("tcp://127.0.0.1:3306", "root", "123456");
+        conn-&gt;setSchema("student_db");
+
+        cout &lt;&lt; "✅ Kết nối MySQL bằng C++ thành công!" &lt;&lt; endl;
+
+        delete conn;
+    } catch (SQLException& e) {
+        cout &lt;&lt; "❌ Lỗi kết nối MySQL: " &lt;&lt; e.what() &lt;&lt; endl;
+    }
+    return 0;
+}
+      </code></pre>
+
       <blockquote class="blog-quote">
-        💬 <em>Tôi dùng AI hằng ngày cho việc học và làm — điều thú vị là, nếu biết cách hỏi đúng, nó gần như trở thành “đồng đội” cực kỳ thông minh.</em>
+        💬 <em>Lần đầu kết nối MySQL thành công bằng C++, mình thấy C++ không chỉ mạnh mà còn rất “đa năng”.</em>
       </blockquote>
 
-      <h2>3. AI trong y tế</h2>
-      <p>
-        Trong lĩnh vực y tế, AI giúp bác sĩ chẩn đoán bệnh sớm, phân tích hình ảnh X-quang, MRI
-        và dự đoán nguy cơ sức khỏe. Nhờ đó, việc điều trị trở nên chính xác và nhanh chóng hơn.
-      </p>
+      <h2>4. Các bước kết nối MySQL trong C++</h2>
+      <ol>
+        <li>Nạp MySQL Connector/C++</li>
+        <li>Tạo đối tượng <code>Driver</code></li>
+        <li>Kết nối đến MySQL Server</li>
+        <li>Chọn cơ sở dữ liệu</li>
+        <li>Đóng kết nối</li>
+      </ol>
+
+      <figure>
+        <img src="images/2.jpg" alt="Sơ đồ kết nối C++ MySQL" class="blog-detail__image">
+        <figcaption>Sơ đồ hoạt động: C++ ↔ MySQL Connector ↔ MySQL.</figcaption>
+      </figure>
+
+      <h2>5. Ví dụ truy vấn dữ liệu</h2>
+      <p>Ví dụ truy vấn bảng <code>students</code>:</p>
+
+      <pre><code>
+Statement* stmt;
+ResultSet* res;
+
+stmt = conn-&gt;createStatement();
+res = stmt-&gt;executeQuery("SELECT * FROM students");
+
+while (res-&gt;next()) {
+    cout &lt;&lt; res-&gt;getInt("id") &lt;&lt; " - "
+         &lt;&lt; res-&gt;getString("name") &lt;&lt; " - "
+         &lt;&lt; res-&gt;getString("major") &lt;&lt; endl;
+}
+
+delete res;
+delete stmt;
+      </code></pre>
+
       <blockquote class="blog-quote">
-        ❤️ <em>Càng đọc về AI trong y tế, tôi càng tin rằng công nghệ không chỉ cứu thời gian — mà còn thật sự cứu người.</em>
+        ⚙️ <em>Khi dữ liệu in ra console, mình biết rằng chương trình C++ đã thật sự làm chủ database.</em>
       </blockquote>
 
-      <h2>4. Thách thức và tương lai của AI</h2>
+      <h2>6. Lưu ý và cải tiến</h2>
       <p>
-        Bên cạnh lợi ích, AI cũng đặt ra nhiều thách thức như bảo mật dữ liệu, nguy cơ mất việc, 
-        hay sự thiếu minh bạch trong thuật toán. Tuy nhiên, với cách tiếp cận có trách nhiệm,
-        AI sẽ tiếp tục là công cụ hỗ trợ đắc lực giúp con người phát triển bền vững hơn trong tương lai.
+        ✅ Luôn đóng kết nối để tránh rò rỉ bộ nhớ.<br>
+        ✅ Không hard-code mật khẩu trong code.<br>
+        ✅ Dùng <code>PreparedStatement</code> để tránh SQL Injection.<br>
+        ✅ Phù hợp cho các ứng dụng hệ thống, game server, phần mềm hiệu năng cao.
       </p>
+
+      <h2>7. Kết luận</h2>
+      <p>
+        Kết nối MySQL bằng C++ giúp bạn xây dựng những ứng dụng mạnh mẽ, tối ưu và kiểm soát tài nguyên tốt.
+        Khi nắm vững kỹ thuật này, bạn có thể phát triển các hệ thống backend hoặc phần mềm chuyên nghiệp.
+      </p>
+
       <blockquote class="blog-quote">
-        🌱 <em>Tôi nghĩ, công nghệ chỉ thật sự tốt khi nó được sử dụng vì con người, không phải thay thế con người.</em>
+        🌱 <em>C++ khó, nhưng một khi đã hiểu thì rất “đã”.</em>
       </blockquote>
 
-      <p>
-        Có thể nói, AI không chỉ là công nghệ, mà là người bạn đồng hành giúp chúng ta tiến gần hơn đến 
-        một thế giới thông minh, tiện lợi và nhân văn.
-      </p>
     </section>
 
     <!-- Footer -->
     <footer class="blog-footer">
-      <p class="signature">— Vỹ nghĩ vậy đó 🌿</p>
+      <p class="signature">— Theo Sơn Tìm Hiểu 🌿</p>
     </footer>
   </main>
 

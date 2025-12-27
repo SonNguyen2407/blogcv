@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tương lai của AI trong giáo dục</title>
+  <title>JavaScript cơ bản – Nền tảng của lập trình web động</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="blog-detail.css" />
 </head>
@@ -19,9 +19,9 @@
 
     <!-- Header bài viết -->
     <header class="blog-detail__header">
-      <h1>Tương lai của AI trong giáo dục</h1>
+      <h1>JavaScript cơ bản – Nền tảng của lập trình web động</h1>
       <p class="blog-detail__meta">
-        Phân tích vai trò, công nghệ và tác động xã hội của trí tuệ nhân tạo trong nền giáo dục thế hệ mới.
+        JavaScript là ngôn ngữ giúp trang web trở nên sống động, tương tác và thông minh hơn. Cùng khám phá nền tảng quan trọng nhất của front-end!
       </p>
     </header>
 
@@ -29,72 +29,148 @@
     <section class="blog-detail__content">
 
       <figure>
-        <img src="images/AI Trong giao duc.jpg" alt="AI trong giáo dục" class="blog-detail__image" />
-        <figcaption>AI đang thay đổi cách dạy và học trên toàn thế giới.</figcaption>
+        <img src="images/blog71.jpg" alt="JavaScript cơ bản" class="blog-detail__image" />
+        <figcaption>JavaScript giúp trang web trở nên động và phản hồi người dùng theo thời gian thực.</figcaption>
       </figure>
 
-      <h2>1. Bối cảnh: Khi giáo dục bước vào kỷ nguyên dữ liệu</h2>
+      <h2>1. JavaScript là gì?</h2>
       <p>
-        Cách mạng công nghiệp 4.0 đã biến đổi toàn bộ hạ tầng xã hội, và giáo dục không thể đứng ngoài. 
-        Sự kết hợp giữa Big Data, AI và phân tích hành vi học tập đang định hình lại khái niệm “trường học”. 
-        AI không chỉ tự động hóa mà còn “hiểu” người học, điều từng chỉ xuất hiện trong giảng dạy 1 kèm 1.
+        JavaScript (JS) là ngôn ngữ lập trình được dùng để tạo các <strong>tác vụ động</strong> trên trang web.  
+        Khi HTML là phần khung, CSS là phần trang trí thì JavaScript là “bộ não” giúp trang web biết “phản ứng”.
       </p>
 
-      <h2>2. Adaptive Learning: Khi AI trở thành người dạy cá nhân</h2>
+      <h2>2. Cách JavaScript hoạt động trong trình duyệt</h2>
       <p>
-        Adaptive Learning dựa trên Machine Learning và Reinforcement Learning. Mỗi bài học là “trạng thái”, mỗi phản ứng của học viên là “hành động”, phần thưởng là mức độ hiểu bài.
+        Trình duyệt có một <em>JavaScript Engine</em> (như V8 của Chrome) để biên dịch và thực thi mã JS.  
+        JavaScript có thể tương tác với <strong>DOM (Document Object Model)</strong> — cho phép truy cập, thay đổi nội dung, hình ảnh, sự kiện người dùng, v.v.
       </p>
+
+      <pre><code class="language-html">
+<!-- Ví dụ: chèn script vào HTML -->
+<script>
+  document.querySelector('h1').textContent = 'Xin chào từ JavaScript!';
+</script>
+      </code></pre>
+
+      <h2>3. Biến và kiểu dữ liệu</h2>
       <p>
-        Các nền tảng như <strong>Knewton</strong>, <strong>Smart Sparrow</strong> hay <strong>Coursera AI Labs</strong> vận hành theo mô hình này, giúp học sinh học hiệu quả hơn 25–40% so với lớp học truyền thống.
+        Dùng <code>let</code>, <code>const</code> và <code>var</code> để khai báo biến. Các kiểu dữ liệu phổ biến gồm: number, string, boolean, object, array.
       </p>
+      <pre><code class="language-js">
+let name = "Vỹ";
+const age = 25;
+var isCoder = true;
+console.log(name, age, isCoder);
+      </code></pre>
+
+      <h2>4. Câu điều kiện và vòng lặp</h2>
+      <p>
+        Điều kiện và vòng lặp là nền tảng để xử lý luồng chương trình.
+      </p>
+      <pre><code class="language-js">
+let score = 85;
+
+if (score >= 90) {
+  console.log("Xuất sắc");
+} else if (score >= 70) {
+  console.log("Khá");
+} else {
+  console.log("Cần cố gắng hơn");
+}
+
+// Vòng lặp for
+for (let i = 1; i <= 5; i++) {
+  console.log("Lần lặp thứ", i);
+}
+      </code></pre>
+
       <figure>
-        <img src="images/Adaptive Learning.jpg" alt="Adaptive Learning" class="blog-detail__image" />
-        <figcaption>Adaptive Learning giúp cá nhân hóa trải nghiệm học tập.</figcaption>
+        <img src="images/blog72.jpg" alt="JavaScript logic" class="blog-detail__image" />
+        <figcaption>Cấu trúc điều kiện và vòng lặp giúp trang web phản hồi linh hoạt theo dữ liệu.</figcaption>
       </figure>
 
-      <h2>3. NLP và Trợ giảng ảo thông minh</h2>
+      <h2>5. Hàm (Function) và phạm vi (Scope)</h2>
       <p>
-        NLP cho phép phát triển trợ giảng ảo giao tiếp tự nhiên, giải thích khái niệm khó hoặc tạo đề kiểm tra tự động. Chatbot như <strong>Khanmigo</strong> hay <strong>ChatGPT Edu</strong> cung cấp ví dụ minh họa và gợi ý tài liệu phù hợp.
+        Hàm là khối mã có thể tái sử dụng. Phạm vi (scope) xác định nơi biến có thể được truy cập.
       </p>
-      <p>
-        Các mô hình LLMs như GPT-4, Gemini, Claude hoạt động dựa trên kiến trúc Transformer, giúp AI không chỉ trả lời đúng mà còn dạy đúng cách.
-      </p>
+      <pre><code class="language-js">
+function greet(name) {
+  return "Xin chào, " + name + "!";
+}
+console.log(greet("mẹ ❤️"));
+      </code></pre>
 
-      <h2>4. Phân tích dữ liệu học tập & dự đoán kết quả bằng ML</h2>
+      <h2>6. Làm việc với DOM</h2>
       <p>
-        ML giúp nhà trường dự đoán học viên rủi ro, xác định chủ đề khó, phát hiện gian lận. Thuật toán như Gradient Boosted Trees, Neural Collaborative Filtering hay Bayesian Networks hỗ trợ phân loại hành vi học tập.
+        JavaScript có thể truy cập và thay đổi các phần tử trên trang HTML.  
+        Đây là nền tảng của lập trình web tương tác.
       </p>
+      <pre><code class="language-js">
+const btn = document.querySelector('#changeText');
+btn.addEventListener('click', () => {
+  document.querySelector('p').textContent = 'Nội dung đã được thay đổi!';
+});
+      </code></pre>
+
       <figure>
-        <img src="images/ung-dung-cua-ai-trong-giao-duc-1024x555.webp" alt="AI dự đoán học tập" class="blog-detail__image" />
-        <figcaption>AI dự đoán kết quả học tập và hỗ trợ giáo viên ra quyết định.</figcaption>
+        <img src="images/73.jpg" alt="DOM trong JavaScript" class="blog-detail__image" />
+        <figcaption>DOM cho phép JS thay đổi cấu trúc trang theo hành động người dùng.</figcaption>
       </figure>
 
-      <h2>5. Ảnh hưởng xã hội và đạo đức</h2>
-      <p>
-        Khi AI triển khai rộng, câu hỏi quan trọng là công bằng, minh bạch và bảo vệ dữ liệu. 
-        Khái niệm <em>Ethical AI in Education</em> nhấn mạnh 6 nguyên tắc: công bằng, minh bạch, trách nhiệm, bảo vệ dữ liệu, tôn trọng nhân quyền và tính toàn diện.
-      </p>
+      <h2>7. Làm việc với mảng và đối tượng</h2>
+      <pre><code class="language-js">
+const fruits = ["Táo", "Chuối", "Cam"];
+fruits.push("Xoài");
 
-      <h2>6. Tương lai: AI + XR và Giáo dục 5.0</h2>
+const person = {
+  name: "Vỹ",
+  job: "Lập trình viên",
+  sayHi() {
+    console.log("Xin chào, tôi là " + this.name);
+  }
+};
+
+person.sayHi();
+      </code></pre>
+
+      <h2>8. Sử dụng hàm mũi tên và cú pháp hiện đại (ES6+)</h2>
+      <pre><code class="language-js">
+// Arrow function
+const sum = (a, b) => a + b;
+
+// Destructuring
+const [x, y] = [10, 20];
+console.log(sum(x, y)); // 30
+      </code></pre>
+
+      <h2>9. Làm việc bất đồng bộ (Asynchronous)</h2>
       <p>
-        AI kết hợp XR tạo ra lớp học ảo thông minh, mô phỏng phòng thí nghiệm, hướng dẫn giải phẫu 3D, giảng dạy ngôn ngữ thực tế ảo.
-        Mục tiêu: phát triển “trí tuệ mở”, AI hỗ trợ tư duy phản biện và sáng tạo.
+        JavaScript là ngôn ngữ bất đồng bộ — xử lý nhiều tác vụ cùng lúc bằng <code>Promise</code> hoặc <code>async/await</code>.
       </p>
+      <pre><code class="language-js">
+async function fetchData() {
+  const res = await fetch('https://api.example.com/data');
+  const data = await res.json();
+  console.log(data);
+}
+fetchData();
+      </code></pre>
 
       <blockquote class="blog-quote">
-        “AI không xóa bỏ vai trò người thầy – mà giải phóng họ khỏi công việc lặp lại, để tập trung vào sáng tạo, cảm xúc và định hướng con người.”
+        “JavaScript là trái tim của web hiện đại — hiểu JS là chìa khóa để trở thành lập trình viên front-end giỏi.” 🌟
       </blockquote>
 
-      <h2>7. Kết luận</h2>
+      <h2>10. Kết luận</h2>
       <p>
-        AI đang chuyển hóa giáo dục từ mô hình truyền đạt sang tương tác. Công nghệ chỉ là công cụ – yếu tố then chốt là triết lý giáo dục nhân bản và tư duy phản biện.
+        JavaScript không chỉ là ngôn ngữ của trình duyệt mà còn là nền tảng của toàn bộ hệ sinh thái web hiện nay (Node.js, React, Vue, v.v).  
+        Bắt đầu với các khái niệm cơ bản, luyện tập qua dự án nhỏ — và mẹ sẽ thấy sức mạnh thật sự của JS!
       </p>
 
     </section>
 
     <!-- Footer -->
     <footer class="blog-footer">
-      <p class="signature">— Vỹ nghĩ vậy đó 🌿</p>
+      <p class="signature">— Vỹ chia sẻ 💛</p>
     </footer>
 
   </main>

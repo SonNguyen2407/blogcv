@@ -23,7 +23,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background: linear-gradient(to right, #f8fbff, #e1ebff); /* Nền sáng xanh lưu ly */
+  background: linear-gradient(to right, #f3e8ff, #e1ebff); /* Nền sáng xanh lưu ly */
 }
 
 #home,
@@ -46,7 +46,7 @@ nav {
   left: 0;
   z-index: 999;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  background: linear-gradient(to right, #f8fbff, #e1ebff);
+  background: linear-gradient(to right, #f3e8ff, #e1ebff);
 }
 
 .nav-container {
@@ -302,7 +302,7 @@ section {
 #about {
   width: 100%;
   min-height: 90vh;
-  background: linear-gradient(to right, #f8fbff, #e1ebff); /* nền xanh lưu ly sáng */
+  background: linear-gradient(to right, #f3e8ff, #e1ebff); /* nền xanh lưu ly sáng */
   padding: 60px 8% 50px;
   display: flex;
   flex-direction: column;
@@ -380,7 +380,7 @@ section {
 .soft-skills {
   margin: 50px auto;
   width: 80%;
-  background: linear-gradient(to right, #f8fbff, #e1ebff); /* nền xanh lưu ly sáng */
+  background: linear-gradient(to right, #f3e8ff, #e1ebff); /* nền xanh lưu ly sáng */
   border-radius: 18px;
   padding: 30px 4%;
   text-align: center;
@@ -459,7 +459,7 @@ section {
 #resume {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to right, #f8fbff, #e1ebff);
+  background: linear-gradient(to right, #f3e8ff, #e1ebff);
   padding: 100px 10% 60px;
 }
 
@@ -618,7 +618,7 @@ section {
 #skills {
   width: 100%;
   min-height: 70vh;
-  background: linear-gradient(to right, #f8fbff, #e1ebff); /* đổi giống About */
+  background: linear-gradient(to right, #f3e8ff, #e1ebff); /* đổi giống About */
   padding: 60px 10%;
   display: flex;
   flex-direction: column;
@@ -701,7 +701,7 @@ section {
 #projects {
   width: 100%;
   min-height: 90vh;
-  background: linear-gradient(to right, #f8fbff, #e1ebff); /* nền sáng xanh lưu ly */
+  background: linear-gradient(to right, #f3e8ff, #e1ebff); /* nền sáng xanh lưu ly */
   padding: 70px 8%;
   display: flex;
   flex-direction: column;
@@ -815,7 +815,7 @@ section {
 /* ===== CONTACT SECTION ===== */
 #contact {
   padding: 80px 10%;
-  background: #eef6ff; /* nền xanh nhạt dịu mắt */
+  background: #f3e8ff; /* nền xanh nhạt dịu mắt */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -901,7 +901,7 @@ section {
 #blogs {
   width: 100%;
   min-height: 90vh;
-  background: linear-gradient(to right, #f8fbff, #e1ebff); /* đổi giống About */
+  background: linear-gradient(to right,  #f3e8ff, #e1ebff); /* đổi giống About */
   padding: 70px 8%;
   display: flex;
   flex-direction: column;
@@ -1129,3 +1129,7 @@ section {
   background: linear-gradient(90deg, #7EA9FF, #3A5BA0); /* hover đảo màu */
 }
 
+section {
+  width: 100%;
+  background: #f3e8ff;
+}
